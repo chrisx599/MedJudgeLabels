@@ -1,0 +1,64 @@
+Job started at: Thu 23 Oct 2025 03:50:15 PM +08
+Running on node: lucas
+Conda environment: med
+Thu Oct 23 15:50:15 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.08              Driver Version: 575.57.08      CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L40S                    On  |   00000000:E1:00.0 Off |                    0 |
+| N/A   35C    P8             36W /  350W |       0MiB /  46068MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+INFO 10-23 15:50:22 [__init__.py:216] Automatically detected platform cuda.
+加载prompt模板: annotation/anno_prompt.txt
+加载查询数据: /common/home/projectgrps/CS707/CS707G2/MedJudgeLabels/data/medical_qa_data.jsonl
+共加载 18842 个查询
+正在加载模型: /common/home/projectgrps/CS707/CS707G2/Qwen3Guard-Gen-8B
+批处理配置: max_num_seqs=256
+INFO 10-23 15:50:26 [utils.py:233] non-default args: {'trust_remote_code': True, 'max_model_len': 8192, 'max_num_seqs': 256, 'disable_log_stats': True, 'model': '/common/home/projectgrps/CS707/CS707G2/Qwen3Guard-Gen-8B'}
+INFO 10-23 15:50:26 [model.py:547] Resolved architecture: Qwen3ForCausalLM
+INFO 10-23 15:50:26 [model.py:1510] Using max model len 8192
+INFO 10-23 15:50:26 [scheduler.py:205] Chunked prefill is enabled with max_num_batched_tokens=8192.
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:26 [core.py:644] Waiting for init message from front-end.
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:26 [core.py:77] Initializing a V1 LLM engine (v0.11.0) with config: model='/common/home/projectgrps/CS707/CS707G2/Qwen3Guard-Gen-8B', speculative_config=None, tokenizer='/common/home/projectgrps/CS707/CS707G2/Qwen3Guard-Gen-8B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=/common/home/projectgrps/CS707/CS707G2/Qwen3Guard-Gen-8B, enable_prefix_caching=True, chunked_prefill_enabled=True, pooler_config=None, compilation_config={"level":3,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output","vllm.mamba_mixer2","vllm.mamba_mixer","vllm.short_conv","vllm.linear_attention","vllm.plamo2_mamba_mixer","vllm.gdn_attention","vllm.sparse_attn_indexer"],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":[2,1],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"use_inductor_graph_partition":false,"pass_config":{},"max_capture_size":512,"local_cache_dir":null}
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:29 [parallel_state.py:1208] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=467850)[0;0m WARNING 10-23 15:50:30 [topk_topp_sampler.py:66] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:30 [gpu_model_runner.py:2602] Starting to load model /common/home/projectgrps/CS707/CS707G2/Qwen3Guard-Gen-8B...
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:30 [gpu_model_runner.py:2634] Loading model from scratch...
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:30 [cuda.py:366] Using Flash Attention backend on V1 engine.
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:37 [default_loader.py:267] Loading weights took 6.62 seconds
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:38 [gpu_model_runner.py:2653] Model loading took 15.2663 GiB and 6.809770 seconds
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:44 [backends.py:548] Using cache directory: /common/home/projectgrps/CS707/CS707G2/.cache/vllm/torch_compile_cache/5f74ca15da/rank_0_0/backbone for vLLM's torch.compile
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:44 [backends.py:559] Dynamo bytecode transform time: 6.21 s
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:50:47 [backends.py:197] Cache the graph for dynamic shape for later use
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:51:00 [backends.py:218] Compiling a graph for dynamic shape takes 15.88 s
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:51:30 [monitor.py:34] torch.compile takes 22.09 s in total
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:51:31 [gpu_worker.py:298] Available KV cache memory: 23.20 GiB
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:51:32 [kv_cache_utils.py:1087] GPU KV cache size: 168,896 tokens
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:51:32 [kv_cache_utils.py:1091] Maximum concurrency for 8,192 tokens per request: 20.62x
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:51:38 [gpu_model_runner.py:3480] Graph capturing finished in 6 secs, took 0.85 GiB
+[1;36m(EngineCore_DP0 pid=467850)[0;0m INFO 10-23 15:51:38 [core.py:210] init engine (profile, create kv cache, warmup model) took 60.71 seconds
+INFO 10-23 15:51:39 [llm.py:306] Supported_tasks: ['generate']
+准备 18842 个查询的prompts...
+将增量保存结果到: /common/home/projectgrps/CS707/CS707G2/MedJudgeLabels/data/pku_anno.jsonl
+开始批量推理 (vLLM将自动分批处理，每批最多 256 个序列)...
+ERROR 10-23 15:58:04 [core_client.py:564] Engine core proc EngineCore_DP0 died unexpectedly, shutting down client.
+Job finished at: Thu 23 Oct 2025 03:58:05 PM +08

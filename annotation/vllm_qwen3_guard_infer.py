@@ -23,8 +23,10 @@ def prepare_prompts(queries: List[dict], prompt_template: str) -> List[str]:
     """准备批量推理的prompts"""
     prompts = []
     for query in queries:
+        question = query["query"]
+        response = query["response"]
         # 将查询添加到prompt模板中
-        full_prompt = f"{prompt_template}\n\nInput:\n{query}\nOutput:"
+        full_prompt = f"{prompt_template}\n\nHuman Query:\n{question}\nChatbot Response:{response}"
         prompts.append(full_prompt)
     return prompts
 
@@ -185,7 +187,7 @@ def run_batch_inference(
         batch_results = []
         for j, output in enumerate(batch_outputs):
             i = start_idx + j
-            query = queries[i]["prompt"]
+            query = queries[i]["query"]
             generated_text = output.outputs[0].text.strip()
             
             try:

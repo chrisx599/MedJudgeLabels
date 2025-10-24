@@ -25,7 +25,7 @@ nvidia-smi
 
 # 运行你的脚本
 python annotation/vllm_qwen3_guard_infer.py \
-    --input /common/home/projectgrps/CS707/CS707G2/PKU-SafeRLHF/data/filter_pku_data.jsonl \
+    --input /common/home/projectgrps/CS707/CS707G2/MedJudgeLabels/data/medical_qa_data.jsonl \
     --output /common/home/projectgrps/CS707/CS707G2/MedJudgeLabels/data/pku_anno.jsonl
 
 echo "Job finished at: $(date)"

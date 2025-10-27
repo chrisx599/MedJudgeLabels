@@ -1,3 +1,24 @@
-# Ignore large files
-data/pku_data.jsonl
-data/pku_data_v2.jsonl
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Local artifacts and logs
+logs/
+
+# Environment & secrets
+.env
+.env.*
+config.ini.local
+.gitignore
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# Streamlit cache
+.streamlit/

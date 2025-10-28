@@ -1,0 +1,13 @@
+# Default configuration for the MedQuad harm annotation pipeline.
+input_path: data/MedQuad_Dataset.csv
+output_path: artifacts/medquad_annotated_YYYYMMDD_HHMM.jsonl
+output_csv_path: artifacts/medquad_annotated_YYYYMMDD_HHMM.csv
+model_name: gpt-5-mini
+max_retries: 3
+rate_limit_qps: 10.0
+batch_size: 20
+concurrency: 10
+timeout_seconds: 60
+row_limit:
+dry_run: false
+seed:

@@ -1,3 +1,13 @@
 # Ignore large files
-./data
-./logs
+data/
+logs/
+unsloth_compiled_cache/
+outputs/
+
+*.csv
+*.json
+*.jsonl
+
+annotation/**/*.csv
+annotation/**/*.json
+annotation/**/*.jsonl

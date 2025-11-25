@@ -18,16 +18,6 @@ mkdir -p logs
 module load CUDA/11.8.0
 module load cuDNN/8.9.7.29-CUDA-11.8.0
 
-# 删除flash-attn安装命令
-pip install wheel
-pip install numpy==1.24.3
-pip install torch==2.1.0 --index-url https://download.pytorch.org/whl/cu118
-pip install transformers==4.35.2
-pip install accelerate==0.25.0
-pip install sentencepiece
-pip install protobuf
-pip install einops
-
 # 禁用flash-attn安装,改为安装其他依赖
 pip install wheel
 pip install numpy==1.24.3
@@ -37,6 +27,7 @@ pip install accelerate==0.25.0
 pip install sentencepiece
 pip install protobuf
 pip install einops
+pip install flash_attn
 
 # 激活conda环境
 # source ~/.bashrc  # 或 source ~/miniconda3/etc/profile.d/conda.sh

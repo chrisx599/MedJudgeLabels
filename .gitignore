@@ -7,7 +7,11 @@ outputs/
 *.csv
 *.json
 *.jsonl
+*.out
+*.md
 
 annotation/**/*.csv
 annotation/**/*.json
 annotation/**/*.jsonl
+
+MedJudgeLabels.zip
